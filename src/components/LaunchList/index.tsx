@@ -6,7 +6,7 @@ const LaunchListContainer = (props:OwnProps) => {
   const { data, error, loading } = useLaunchListQuery();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>LOADING</div>;
   }
 
   if (error || !data) {

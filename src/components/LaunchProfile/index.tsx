@@ -14,7 +14,7 @@ const LaunchProfileContainer = ({ id }: OwnProps) => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>LOADING</div>;
   }
 
   if (error) {

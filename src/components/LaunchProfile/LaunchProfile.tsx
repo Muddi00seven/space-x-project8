@@ -6,33 +6,31 @@ interface Props {
   data: LaunchProfileQuery;
 }
 
-const className = 'LaunchProfile';
-
 const LaunchProfile: React.FC<Props> = ({ data }) => {
   if (!data.launch) {
-    return <div>No launch available</div>;
+    return <div>NO LAUNCH YET</div>;
   }
 
   return (
-    <div className={className}>
-      <div className={`${className}__status`}>
+    <div className="lp">
+      <div className="lpStatus">
         <span>Flight {data.launch.flight_number}: </span>
         {data.launch.launch_success ? (
-          <span className={`${className}__success`}>Success</span>
+          <span className="lpSuccess">SUCCESS</span>
         ) : (
-          <span className={`${className}__failed`}>Failed</span>
+          <span className="lpFailed">FAILED</span>
         )}
       </div>
-      <h1 className={`${className}__title`}>
+      <h1 className="lpTitle">
         {data.launch.mission_name}
         {data.launch.rocket &&
           ` (${data.launch.rocket.rocket_name} | ${data.launch.rocket.rocket_type})`}
       </h1>
-      <p className={`${className}__description`}>{data.launch.details}</p>
+      <p className="lpdescription">{data.launch.details}</p>
       {!!data.launch.links && !!data.launch.links.flickr_images && (
-        <div className={`${className}__image-list`}>
+        <div className="lpListImage">
           {data.launch.links.flickr_images.map(image =>
-            image ? <img src={image} className={`${className}__image`} key={image} /> : null,
+            image ? <img src={image} className="lpImage" key={image} /> : null,
           )}
         </div>
       )}

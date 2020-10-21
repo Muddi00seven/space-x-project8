@@ -14,7 +14,7 @@ export interface OwnProps {
   }
 
 const LaunchList: React.FC<Props> = ({ data, handleIdChange }) => (
-  <div className="LaunchLis">
+  <div className="LaunchList">
     <h3>All Launches List</h3>
     <ol className="LaunchList__list">
       {!!data.launches &&
