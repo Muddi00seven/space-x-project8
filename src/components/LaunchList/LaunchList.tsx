@@ -12,17 +12,16 @@ export interface OwnProps {
   interface Props extends OwnProps {
     data: LaunchListQuery;
   }
-const className = 'LaunchList';
 
 const LaunchList: React.FC<Props> = ({ data, handleIdChange }) => (
-  <div className={className}>
-    <h3>Launches</h3>
-    <ol className={`${className}__list`}>
+  <div className="LaunchLis">
+    <h3>All Launches List</h3>
+    <ol className="LaunchList__list">
       {!!data.launches &&
         data.launches.map(
           (launch, i) =>
             !!launch && (
-              <li key={i} className={`${className}__item`}
+              <li key={i} className="LaunchList__item"
               onClick={() => handleIdChange(launch.flight_number!)}>
                 {launch.mission_name} ({launch.launch_year})
               </li>
